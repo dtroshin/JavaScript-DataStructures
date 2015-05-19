@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>LinkedList</title>
+    
+    <script src="LinkedListv2.js" type="text/javascript"></script>
+    
+    <script>     
+        var sll = new LinkedList();
+
+        console.log('***Attempting Push***');
+        sll.push(2);
+        sll.push(3);
+        sll.push(4);
+
+        console.log(sll.head); //Object {data: 2, next: Object}
+        console.log(sll.head.next); //Object {data: 3, next: Object}
+        console.log(sll.head.next.next); //Object {data: 4, next: null}
+        
+        console.log('\n***Attempting Remove***');
+        sll.remove(3); 
+        sll.remove(1);//nothing happens because it doesnt exist
+        
+        //check values by traversing LinkedList 
+        console.log(sll.head); //Object {data: 2, next: Object}
+        console.log(sll.head.next); //Object {data: 4, next: Object}
+        console.log(sll.head.next.next);//null
+        
+        console.log('\n***Attempting Clear***');
+        sll.remove(2);
+        sll.remove(4);
+        console.log(sll.head); //null
+        //console.log(sll.head.next); //throws error (cant have next if no head))
+    
+        console.log('\n***Attempting New Push***')
+        sll.push(1);
+        sll.push(2);
+        sll.push(3);
+        sll.push(4);
+        sll.push(5);
+
+        console.log(sll.head); //Object {data: 1, next: Object}
+        console.log(sll.head.next); //Object {data: 2, next: Object}
+        console.log(sll.head.next.next); //Object {data: 3, next: Object}
+        console.log(sll.head.next.next.next); //Object {data: 4, next: Object}
+        console.log(sll.head.next.next.next.next); //Object {data: 6, next: Object}
+        
+        reversesll(sll);
+        console.log('\n***Attempting Reverse of Linked List***');
+        console.log(sll.head); //Object {data: 1, next: Object}
+        console.log(sll.head.next); //Object {data: 2, next: Object}
+        console.log(sll.head.next.next); //Object {data: 3, next: Object}
+        console.log(sll.head.next.next.next); //Object {data: 4, next: Object}
+        console.log(sll.head.next.next.next.next); //Object {data: 6, next: Object}
+    </script>
+</head>
+
+<body>
+    
+</body>
+</html>
